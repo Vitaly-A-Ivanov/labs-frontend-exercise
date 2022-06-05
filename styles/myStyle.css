@@ -1,0 +1,86 @@
+.row {
+    --bs-gutter-x: 0 !important;
+}
+
+@media (max-width: 768px) {
+
+    .myButton {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1030;
+    }
+    .cardsList {
+        margin-bottom: 6rem;
+    }
+
+    .myCard {
+        padding: 0.6rem;
+    }
+}
+
+.myButton__text {
+    font-size:1rem;
+}
+.myTitle {
+    font-size: 1.5rem;
+}
+
+
+
+
+@media (min-width: 768px) {
+    .myButton__text {
+        font-size:0.6rem;
+    }
+    .myHeading {
+        font-size:1.2rem;
+    }
+    .myText {
+        font-size:0.6rem;
+    }
+    .myCheckbox__text {
+        font-size: 0.7rem;
+    }
+    .myTitle {
+        font-size: 1.5rem;
+    }
+
+}
+
+@media (min-width: 992px) {
+    .myButton__text {
+        font-size:0.8rem;
+    }
+    .myHeading {
+        font-size:1.4rem;
+    }
+    .myText {
+        font-size:0.8rem;
+    }
+    .myCheckbox__text {
+        font-size: 0.9rem;
+    }
+    .myTitle {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .myButton__text {
+        font-size:1rem;
+    }
+    .myHeading {
+        font-size:1.6rem;
+    }
+    .myText {
+        font-size:1rem;
+    }
+    .myCheckbox__text {
+        font-size: 1rem;
+    }
+}
+
+
+

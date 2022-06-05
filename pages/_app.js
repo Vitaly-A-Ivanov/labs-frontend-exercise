@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import App from "next/app";
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
+import '../styles/myStyle.css'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
 
       <main className="">
         <Component {...pageProps} />
+
       </main>
     </div>
   );

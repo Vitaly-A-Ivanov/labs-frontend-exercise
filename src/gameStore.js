@@ -2,6 +2,8 @@ import fs from "fs";
 import got from "got";
 import { v4 as uuidv4 } from "uuid";
 
+var Hand = require('pokersolver').Hand;
+
 const chunk = (arr, len) => {
   const chunks = [];
   const n = arr.length;
@@ -120,3 +122,39 @@ export const allPlayersExchanged = (gameId) => {
       .length === Object.keys(players).length
   );
 };
+
+export const pokerSolver = (game) => {
+
+  let hands = {}
+  let handsArray = []
+
+  // get all cards from current game a nd solve them
+  Object.entries(game).map(([key, value]) => {
+    const cards = value.cards
+    let hand = []
+    Object.entries(cards).map(([key, value]) => {
+      hand.push(value.code)
+    })
+    const solvedHand = Hand.solve(hand)
+    hands[key] = solvedHand
+    handsArray.push(solvedHand)
+  })
+
+
+  // determine a winner
+  //TODO sometimes pokersolver library returns error 'Duplicate cards at new Hand'
+  const winnerHand = Hand.winners(handsArray);
+
+  let winner;
+
+  winnerHand.map((winnerValue, winnerKey) => {
+    Object.entries(hands).map(([key, value]) => {
+      if (JSON.stringify(winnerValue) == JSON.stringify(value)) {
+        winner = key
+      }
+    })
+  })
+
+  return winner
+
+}
