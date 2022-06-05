@@ -27,6 +27,10 @@
     font-size: 1.5rem;
 }
 
+.myCheckbox__text {
+    cursor: pointer;
+}
+
 
 
 
