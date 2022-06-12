@@ -9,7 +9,7 @@ export default async function handler(req, res) {
     return res.redirect('/');
   }
 
-  const gameId = req.body.gameId;
+  const gameId = req.body.gameId.trim();
   await addPlayer(gameId, playerId);
   return res.redirect(`/games/${gameId}`);
 }
