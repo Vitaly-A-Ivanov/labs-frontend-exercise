@@ -128,7 +128,7 @@ export const pokerSolver = (game) => {
   let hands = {}
   let handsArray = []
 
-  // get all cards from current game a nd solve them
+  // get all cards from current game and solve them
   Object.entries(game).map(([key, value]) => {
     const cards = value.cards
     let hand = []
@@ -145,16 +145,16 @@ export const pokerSolver = (game) => {
   //TODO sometimes pokersolver library returns error 'Duplicate cards at new Hand'
   const winnerHand = Hand.winners(handsArray);
 
-  let winner;
+  let winnerId;
 
   winnerHand.map((winnerValue, winnerKey) => {
     Object.entries(hands).map(([key, value]) => {
       if (JSON.stringify(winnerValue) == JSON.stringify(value)) {
-        winner = key
+        winnerId = key
       }
     })
   })
 
-  return winner
+  return winnerId
 
 }

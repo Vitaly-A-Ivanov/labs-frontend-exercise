@@ -21,16 +21,16 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const winner = pokerSolver(gameState.players);
+  const winnerId = pokerSolver(gameState.players);
 
   let isWinner = false;
-  if (winner === playerId) isWinner = true;
+  if (winnerId === playerId) isWinner = true;
 
 
   return {
     props: {
       currentPlayer: gameState.players[playerId],
-      winnerPlayer: gameState.players[winner],
+      winnerPlayer: gameState.players[winnerId],
       winner: isWinner
     }
   };
